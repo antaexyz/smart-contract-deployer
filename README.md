@@ -1,6 +1,6 @@
 # Smart Contract Deployer
 
-Deploy a smart contract easily.
+A web interface to easily deploy a smart contract.
 
 ## Getting started:
 

@@ -2,6 +2,7 @@
 	import { ethers, ContractFactory } from 'ethers'
 
 	let account = null
+	let contractAddress = null
 
 	let contract = {
 		abi: null,
@@ -50,6 +51,7 @@
 		const result = await factory.deploy()
 
 		console.log(result)
+		contractAddress = result.address
 		result.deployTransaction
 		await result.deployTransaction.wait()
 		alert(`Contract successfully deployed on ${networkName} network!`)
@@ -103,6 +105,12 @@
 		<li>
 			<button on:click={deploy}>Deploy your smart contract </button>
 		</li>
+		{#if contractAddress}
+			<br />
+			<li>
+				<p>Contract Address: {contractAddress}</p>
+			</li>
+		{/if}
 	</ol>
 </main>
 
